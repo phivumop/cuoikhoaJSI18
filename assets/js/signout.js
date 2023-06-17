@@ -32,12 +32,12 @@ onAuthStateChanged(auth, (user) => { // => Công dụng: xác định web của 
 	}
   });
 
-  document.getElementById("signout").onsubmit = (e) => {
-    e.preventDefault();
+  document.getElementById("signout").onclick = () => {
     signOut(auth).then(() => {
        // Sign-out successful.
        window.location.href = "sign_in.html";
      }).catch((error) => {
        // An error happened.
+	   alert("error:" , error.message);
      });
     }
