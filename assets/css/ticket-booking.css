@@ -48,9 +48,9 @@ h2{
 	padding: 10px;
 	border-radius: 5px;
 	border: none;
-	background-color: #df5eb3;
+	background-color: #FF4B2B;
 	color: #fff;
 	font-size: 16px;
 	cursor: pointer;
-	transition: background-color 0
+	transition: background-color 0 ;
 }
