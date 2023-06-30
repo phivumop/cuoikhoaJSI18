@@ -56,9 +56,7 @@
     <h2>Đặt Vé</h2>
     <form>
       <div class="form-group">
-        <label for="movie">Phim:</label>
-        <select id="movie" name="movie">
-        </select>
+        <label>Phim: </label><p id="ten-phim"></p>
       </div>
       <div class="form-group">
         <label for="date">Ngày:</label>
@@ -73,8 +71,7 @@
         <input type="number" id="tickets" name="tickets" min="1" max="140" required>
       </div>
       <div class="form-group">
-        <label for="price">Giá:</label>
-        <input type="text" id="price" name="price" readonly>
+        <label for="price">Giá:</label><p id="price"></p>
       </div>
       <input type="button" class="buyticket" value="Đặt" onclick="location.href='index.html';"></input>
     </form>
