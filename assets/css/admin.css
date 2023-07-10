@@ -43,3 +43,34 @@ input[type="text"] {
 	cursor: pointer;
 	transition: background-color 0
 }
+.bannerPhim {
+	width: 80%;
+}
+.Amovie{
+	width: 80%;
+}
+.Scast{
+	width: 80%;
+}
+.deleBut{
+	padding: 15px 20px;
+	border-radius: 6px;
+	border: none;
+	background-color: red;
+	color: #fff;
+	font-size: 15px;
+}
+.upBut{
+	padding: 15px 20px;
+	border-radius: 6px;
+	border: none;
+	background-color: #28a745;
+	color: #fff;
+	font-size: 15px;
+}
+#DPS{
+	width: 300px;
+	margin-left: 400px;
+	margin-bottom: 20px;
+	text-align: center;
+}
