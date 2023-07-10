@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"
-import { getFirestore, collection, doc, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"
 
 
 // Your web app's Firebase configuration
@@ -18,12 +18,13 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
+document.getElementById("movie-container").innerHTML = "";
 let dataRender = "";
 const querySnapshot = await getDocs(collection(db, "movies"));
 querySnapshot.forEach((doc) => {
   console.log(doc.data());
 
-  dataRender += `
+  dataRender = `
   <div class="item vhny-grid">
   <div class="box16 mb-0">
 	  <figure>
@@ -65,7 +66,7 @@ querySnapshot.forEach((doc) => {
 				  </div>
 				  <div class="bookbtn">
 					  <button type="button" class="btn btn-success"
-						  onclick="location.href='ticket-booking.html';">Đặt vé</button>
+						  id="${doc.id}-btn">Đặt vé</button>
 				  </div>
 			  </div>
 		  </div>
@@ -73,9 +74,17 @@ querySnapshot.forEach((doc) => {
 	  <!-- modal end -->
   </div>
 </div>
-  
+ 
   `;
+  const htmlFilm = document.createElement('div')
+  htmlFilm.innerHTML = dataRender
+  document.getElementById("movie-container").appendChild(htmlFilm)
+  document.getElementById(`${doc.id}-btn`).addEventListener("click", () => chuyentrang(doc)) 
+
+
  });
 
-
- document.getElementById("movie-container").innerHTML = dataRender
+ function chuyentrang(doc) { 
+	localStorage.setItem("phimvuabam", (doc.id));
+	window.location.href = "ticket-booking.html";
+  }
