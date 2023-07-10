@@ -22,14 +22,15 @@ const db = getFirestore(app);
 document.getElementById("but").onclick = async () => {
 	try {
   		const docRef = await addDoc(collection(db, "movies"), {
-    			name: document.getElementById("title"). value,
-    			releasedDay: document.getElementById("day"). value,
-			aboutMovie: document.getElementById("aboutMovie").value,
-    			banner: document.getElementById("bannerUrl"). value,
-    			cost: document.getElementById("price"). value,
-    			starCast: document.getElementById("starCast"). value
+    		name: document.getElementById("title").value,
+    		'released day': document.getElementById("day").value,
+			'about movie': document.getElementById("aboutMovie").value,
+    		banner: document.getElementById("bannerUrl").value,
+    		cost: document.getElementById("price").value,
+    		'star cast': document.getElementById("starCast").value
   		});
   		console.log("Document written with ID: ", docRef.id);
+		alert('Đăng phim thành công')
 	} catch (e) {
   	console.error("Error adding document: ", e);
 }}
