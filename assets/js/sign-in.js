@@ -58,9 +58,13 @@ document.getElementById("signin").onsubmit = (e) => {
      .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
-	  window.location.href = "index.html";
+	  if (user.uid == "4WxapHo4UEOv5bP2jLTfc8qKkkn2"){
+		window.location.href = "admin.html";
+	}
+	else{
+	  	window.location.href = "index.html";}
      // ...
-    })
+	})
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -68,15 +72,16 @@ document.getElementById("signin").onsubmit = (e) => {
     });
 }
 
- onAuthStateChanged(auth, (user) => { // => Công dụng: xác định web của mình đã có người đăng nhập hay chưa ?
+onAuthStateChanged(auth, (user) => { // => Công dụng: xác định web của mình đã có người đăng nhập hay chưa ?
 	if (user) { // nếu có => chạy vô if này
 	  // User is signed in, see docs for a list of available properties
 	  // https://firebase.google.com/docs/reference/js/firebase.User
 	  const uid = user.uid;
 	  window.location.href = "sign_out.html";
 	  // ...
-	} else { // nếu không, chạy vô else này
+	}
+	else { // nếu không, chạy vô else này
 	  // User is signed out
   	  // ...
 	}
-  });
+});

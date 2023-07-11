@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us page</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/as-alert-message.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/contact_us.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style-starter.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/admin.css">
+</head>
+<body>
+    <header id="site-header" class="w3l-header fixed-top">
+        <!--/nav-->
+        <nav class="navbar navbar-expand-lg navbar-light fill px-lg-0 py-0 px-3">
+          <div class="container">
+            <h1><a class="navbar-brand" href="index.html"><span class="fa fa-play icon-log" aria-hidden="true"></span>
+              Betterfilmz </a></h1>
+            <!-- if logo is image enable this   
+                        <a class="navbar-brand" href="#index.html">
+                            <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+                        </a> -->
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <!-- <span class="navbar-toggler-icon"></span> -->
+              <span class="fa icon-expand fa-bars"></span>
+              <span class="fa icon-close fa-times"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="admin.html">Đăng phim</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="movieList.html">Danh sách phim</a>
+                </li>
+              </ul>
+              
+              <div class="Login_SignUp" id="login" style="font-size: 2rem ; display: inline-block; position: relative;">
+                <!-- <li class="nav-item"> -->
+                <a class="nav-link" href="sign_in.html"><i class="fa fa-user-circle-o"></i></a>
+                <!-- </li> -->
+              </div>
+            </div>
+            <!-- toggle switch for light and dark theme -->
+            <div class="mobile-position">
+              <nav class="navigation">
+                <div class="theme-switch-wrapper">
+                  <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox">
+                    <div class="mode-container">
+                      <i class="gg-sun"></i>
+                      <i class="gg-moon"></i>
+                    </div>
+                  </label>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+    <table>
+        <div class="movie-ticket-form">
+            <h2>Đăng phim</h2>
+            <form>
+              <div class="form-group">
+                <label for="movie">Tên phim:</label>
+                    <input type="text" id="title" name="name">
+              </div>
+              <div class="form-group">
+                <label for="date">Ngày ra mắt:</label>
+                <input type="text" id="day" name="released date">
+              </div>
+              <div class="form-group">
+                <label for="movie">Nội dung phim:</label>
+                <input type="text" id="aboutMovie" name="about movie">
+              </div>
+              <div class="form-group">
+                <label for="movie">Banner phim:</label>
+                <input type="text" id="bannerUrl" name="banner">
+              </div>
+              <div class="form-group">
+                <label for="movie">Diễn viên nổi tiếng:</label>
+                <input type="text" id="starCast" name="star cast">
+              </div>
+              <div class="form-group">
+                <label for="price">Giá vé phim:</label>
+                <input type="number" id="price" name="price">
+              </div>
+            </form>
+            <input id="but" type="submit" class="home-page-btn" value="Đăng phim"/>    
+          </div>
+    </table>
+
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+      $(function () {
+        $('.navbar-toggler').click(function () {
+          $('body').toggleClass('noscroll');
+        })
+      });
+    </script>
+    <!-- disable body scroll which navbar is in active -->
+    <!--/MENU-JS-->
+    <script>
+      $(window).on("scroll", function () {
+        var scroll = $(window).scrollTop();
+  
+        if (scroll >= 80) {
+          $("#site-header").addClass("nav-fixed");
+        } else {
+          $("#site-header").removeClass("nav-fixed");
+        }
+      });
+  
+      //Main navigation Active Class Add Remove
+      $(".navbar-toggler").on("click", function () {
+        $("header").toggleClass("active");
+      });
+      $(document).on("ready", function () {
+        if ($(window).width() > 991) {
+          $("header").removeClass("active");
+        }
+        $(window).on("resize", function () {
+          if ($(window).width() > 991) {
+            $("header").removeClass("active");
+          }
+        });
+      });
+    </script>
+    <!--/theme-change-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/theme-change.js"></script>
+    <script src="assets/js/admin.js"  type="module"></script>
+</body>
+</html>
