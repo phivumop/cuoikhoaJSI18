@@ -41,6 +41,10 @@ onAuthStateChanged(auth, (user) => { // => Công dụng: xác định web của 
 	document.getElementById("ten-phim").innerHTML = `${docSnap.data().name}`;
   } 
   
-  if (docSnap.exists()) {
-	document.getElementById("price").innerHTML = `${docSnap.data().cost} VND`;
-  } 
+  const ticketselement = document.getElementById("tickets")
+  let tongtien = 0;
+
+  ticketselement.onchange = (e) => {
+	 tongtien = docSnap.data().cost  * (e.target.value ?? 0);
+	 document.getElementById("price").innerHTML = `${tongtien} VND`;
+  }
