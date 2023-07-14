@@ -22,7 +22,6 @@ document.getElementById("movie-container").innerHTML = "";
 let dataRender = "";
 const querySnapshot = await getDocs(collection(db, "movies"));
 querySnapshot.forEach((doc) => {
-  console.log(doc.data());
 
   dataRender = `
   <div class="item vhny-grid">

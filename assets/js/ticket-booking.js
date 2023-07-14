@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"
-import { getFirestore, collection, getDocs, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"
+import { getFirestore, collection, doc, getDoc, addDoc } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -46,5 +46,21 @@ onAuthStateChanged(auth, (user) => { // => Công dụng: xác định web của 
 
   ticketselement.onchange = (e) => {
 	 tongtien = docSnap.data().cost  * (e.target.value ?? 0);
-	 document.getElementById("price").innerHTML = `${tongtien} VND`;
+	 document.getElementById("price").innerHTML = `${tongtien}`;
+  }
+
+  document.getElementById("buy").onclick = async () => {
+	try {
+	  const docRef = await addDoc(collection(db, "ticketss"), {
+		name: document.getElementById("ten-phim").innerHTML ?? null,
+		date: document.getElementById("date").value ?? null,
+		time: document.getElementById("time").value ?? null,
+		ticket: document.getElementById("tickets").value ?? null,
+		price: document.getElementById("price").innerHTML ?? null		
+	  });
+	  window.location.href='index.html';
+	  console.log("Document written with ID: ", docRef.id);
+	} catch (e) {
+	  alert("Đặt vé thất bại");
+	}
   }
