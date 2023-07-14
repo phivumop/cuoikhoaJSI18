@@ -58,7 +58,7 @@ document.getElementById("signin").onsubmit = (e) => {
      .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
-	  if (user.uid == "4WxapHo4UEOv5bP2jLTfc8qKkkn2"){
+	  if (user.uid == "cO0bP0pUjnbads7aNoV48529HUq1"){
 		window.location.href = "admin.html";
 	}
 	else{
