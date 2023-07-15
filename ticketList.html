@@ -2,12 +2,17 @@
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us page</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/as-alert-message.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/contact_us.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ticket Booking</title>
   <link rel="stylesheet" type="text/css" href="assets/css/style-starter.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/admin.css">
+  <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/progress.css">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/ticketList.css">
+
+  <!-- ..............For progress-bar............... -->
+  <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700" rel="stylesheet">
 </head>
 <body>
     <header id="site-header" class="w3l-header fixed-top">
@@ -33,12 +38,12 @@
                 <li class="nav-item">
                   <a class="nav-link" href="admin.html">Đăng phim</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                   <a class="nav-link" href="movieList.html">Danh sách phim</a>
                 </li>
-		<li class="nav-item">
-		  <a class="nav-link" href="ticketList.html">Danh sách vé</a>
-		</li>
+                <li class="nav-item active">
+					<a class="nav-link" href="ticketList.html">Danh sách vé</a>
+				</li>
               </ul>
     
               <div class="Login_SignUp" id="login" style="font-size: 2rem ; display: inline-block; position: relative;">
@@ -64,33 +69,10 @@
           </div>
         </nav>
       </header>
-
-      <table>
-      <section class="w3l-grids">
-        <div class="grids-main py-5">
-          <div class="container py-lg-4">
-            <div class="headerhny-title">
-              <div class="w3l-title-grids">
-                <div class="headerhny-left">
-                  <h3 class="hny-title" id="DPS">Danh sách phim</h3>
-                </div>	
-              </div>
-            </div>
-            <div class="w3l-populohny-grids" id="movie-container">				
-            </div>
-          </div>
-        </div>
-      </section>
-    </table>
-
-			<!-- copyright -->
-		</section>
-	</footer>
-	<!-- FOOTER -->
-
-
+    <div class="tb" id="ticketTB">
+        
+    </div>
 </body>
-
 </html>
 <script src="assets/js/jquery-3.3.1.min.js"></script>
 <!--/theme-change-->
@@ -220,6 +202,4 @@
 </script>
 
 <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/movieList.js"  type="module"></script>
-</body>
-</html>
+<script src="assets/js/ticketList.js"  type="module"></script>
