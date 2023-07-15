@@ -55,8 +55,8 @@ onAuthStateChanged(auth, (user) => { // => Công dụng: xác định web của 
 		name: document.getElementById("ten-phim").innerHTML ?? null,
 		date: document.getElementById("date").value ?? null,
 		time: document.getElementById("time").value ?? null,
-		ticket: document.getElementById("tickets").value ?? null,
-		price: document.getElementById("price").innerHTML ?? null		
+		ticket: Number(document.getElementById("tickets").value ?? null),
+		price: Number(document.getElementById("price").innerHTML ?? null)		
 	  });
 	  window.location.href='index.html';
 	  console.log("Document written with ID: ", docRef.id);

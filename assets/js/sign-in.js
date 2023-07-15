@@ -19,6 +19,20 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
+onAuthStateChanged(auth, (user) => { // => Công dụng: xác định web của mình đã có người đăng nhập hay chưa ?
+	if (user) { // nếu có => chạy vô if này
+	  // User is signed in, see docs for a list of available properties
+	  // https://firebase.google.com/docs/reference/js/firebase.User
+	  const uid = user.uid;
+	  window.location.href = "sign_out.html";
+	  // ...
+	}
+	else { // nếu không, chạy vô else này
+	  // User is signed out
+  	  // ...
+	}
+});
+
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
 const container = document.getElementById('container_signup_signin');
@@ -72,16 +86,4 @@ document.getElementById("signin").onsubmit = (e) => {
     });
 }
 
-onAuthStateChanged(auth, (user) => { // => Công dụng: xác định web của mình đã có người đăng nhập hay chưa ?
-	if (user) { // nếu có => chạy vô if này
-	  // User is signed in, see docs for a list of available properties
-	  // https://firebase.google.com/docs/reference/js/firebase.User
-	  const uid = user.uid;
-	  window.location.href = "sign_out.html";
-	  // ...
-	}
-	else { // nếu không, chạy vô else này
-	  // User is signed out
-  	  // ...
-	}
-});
+
