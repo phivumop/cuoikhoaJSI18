@@ -38,6 +38,6 @@ onAuthStateChanged(auth, (user) => { // => Công dụng: xác định web của 
        window.location.href = "sign_in.html";
      }).catch((error) => {
        // An error happened.
-	   alert("error:" , error.message);
+	   alert("Đăng xuất thất bại");
      });
     }
